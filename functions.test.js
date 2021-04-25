@@ -31,11 +31,39 @@ describe ("suma should take two numbers as arguments and return the sum of them"
     });
 
     test('given bici and senda as arguments, returns bicisenda', () => {
-        expect (functions.suma('hola','chau')).toBe('bicisenda');
+        expect (functions.suma('bici','senda')).toBe('bicisenda');
     });
 
-    test('add null + 2 equals 2', () => {
+    test('given null and 2 as arguments, returns 2', () => {
         expect (functions.suma(null,2)).toBe(2);
     });
 });
+
+describe ("resta should take two numbers as arguments and return the subtraction of them", () => {
+
+    test('given 6 and 1 as argumentes, returns 5', () => {
+        expect (functions.resta(6,1)).toBe(5);
+    });
+
+    test('given -1 and 3 as arguments, returns -4', () => {
+        expect (functions.resta(-1,3)).toBe(-4);
+    });
+
+});
+
+describe ("multiplicacion should take two numbers as arguments and return the product of them", () => {
+
+    test('given 6 and 3 as argumentes, returns 18', () => {
+        expect (functions.multiplicacion(6,3)).toBe(18);
+    });
+
+    test('given 6 and 0 as argumentes, returns 0', () => {
+        expect (functions.multiplicacion(6,0)).toBe(0);
+    });
+
+   /* test('given 6 and undefined as argumentes, returns 5', () => {
+        expect (functions.multiplicacion(6,undefined)).toBe(null);
+    }); */
+});
+
 
