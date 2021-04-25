@@ -93,14 +93,26 @@ describe ("tablaMultiplicacion should take two numbers and return an array of nu
     });
 });
 
-describe ("", () => {
+describe ("potencia should take two numbers as arguments and return the first number raised to the power of the second number", () => {
 
-    
-    
+    test('given 5 and 3 as arguments, returns 125', () => {
+        expect (functions.potencia(5,3)).toBe(125);
+    });
+
+    test('given 5 and 0 as arguments, returns 1', () => {
+        expect (functions.potencia(5,0)).toBe(1);
+    });
+
+  //  test('given 5 and 3 as arguments, returns 125', () => {
+    //7    expect (functions.potencia(5,3)).toBe(125);
+   // });
 });
 
-describe ("", () => {
+describe ("anidada should take two numbers as arguments and return the sum of its squares", () => {
     
+    test('given 2 and 3 as arguments, returns 13', () => {
+        expect (functions.anidada(2,3)).toBe(13);
+    });
 });
 
 describe ("", () => {
