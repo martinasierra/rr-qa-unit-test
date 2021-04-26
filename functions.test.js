@@ -41,6 +41,10 @@ describe("suma should take two numbers as arguments and return the sum of them",
     test('given null and 2 as arguments, returns 2', () => {
         expect(functions.suma(null,2)).toBe(2);
     });
+
+    test('given 6 and undefined as arguments, returns undefined', () => {
+        expect(functions.suma(6,undefined)).toBeUndefined;
+    });
 });
 
 describe("resta should take two numbers as arguments and return the subtraction of them", () => {
@@ -57,7 +61,7 @@ describe("resta should take two numbers as arguments and return the subtraction 
         expect(functions.resta(6,null)).toBe(6);
     });
 
-    test('given 6 and undefined as arguments, returns 6', () => {
+    test('given 6 and undefined as arguments, returns undefined', () => {
         expect(functions.resta(6,undefined)).toBeUndefined;
     });
 });
@@ -72,7 +76,11 @@ describe("multiplicacion should take two numbers as arguments and return the pro
         expect(functions.multiplicacion(6,0)).toBe(0);
     });
 
-    test('given 6 and undefined as argumentes, returns undef', () => {
+    test('given 6 and null as arguments, returns 6', () => {
+        expect(functions.multiplicacion(6,null)).toBe(0);
+    });
+
+    test('given 6 and undefined as argumentes, returns undefined', () => {
         expect (functions.multiplicacion(6,undefined)).toBeUndefined;
     });
 });
@@ -83,7 +91,7 @@ describe("division should take two numbers as arguments and return the product o
         expect(functions.division(6,3)).toBe(2);
     });
 
-    test('given 6 and 0 as arguments, returns No se puede dividir por 0', () => {
+    test('given 6 and 0 as arguments, returns the string No se puede dividir por 0', () => {
         expect(functions.division(6,0)).toMatch('No se puede dividir por 0');
     });
 
@@ -118,6 +126,10 @@ describe("anidada should take two numbers as arguments and return the sum of its
     
     test('given 2 and 3 as arguments, returns 13', () => {
         expect(functions.anidada(2,3)).toBe(13);
+    });
+
+    test('given null and null as arguments, returns null', () => {
+        expect(functions.anidada(null,null)).toBeNull;
     });
 });
 
