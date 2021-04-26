@@ -22,6 +22,9 @@ describe("texto should take any argument and returns it", () => {
         expect(functions.texto('')).toBe('');
     });
 
+    test('given true as argument, returns true', () => {
+        expect(functions.texto(true)).toBeTruthy;
+    });
 });
 
 describe("suma should take two numbers as arguments and return the sum of them", () => {
@@ -45,6 +48,10 @@ describe("suma should take two numbers as arguments and return the sum of them",
     test('given 6 and undefined as arguments, returns undefined', () => {
         expect(functions.suma(6,undefined)).toBeUndefined;
     });
+
+    test('given true and true as arguments, returns 2', () => {
+        expect(functions.suma(true,true)).toBe(2);
+    })
 });
 
 describe("resta should take two numbers as arguments and return the subtraction of them", () => {
@@ -106,9 +113,14 @@ describe("tablaMultiplicacion should take two numbers and return an array of num
         expect(functions.tablaMultiplicar(3,8)).toContain(0,3,6,9,12,15,18,21,24);
     });    
 
-    test('given 3 and 9 as arguments, returns 0,3,6,9,12,15,18,21,24,27,30', () => {
-        expect(functions.tablaMultiplicar(3,)).toContain(0,3,6,9,12,15,18,21,24,27,30);
+    test('given 3 and null as arguments, returns 0,3,6,9,12,15,18,21,24,27,30', () => {
+        expect(functions.tablaMultiplicar(3,null)).toContain(0,3,6,9,12,15,18,21,24,27,30);
     });
+
+    test('given 3 and undefined as arguments, returns 0,3,6,9,12,15,18,21,24,27,30', () => {
+        expect(functions.tablaMultiplicar(3,undefined)).toContain(0,3,6,9,12,15,18,21,24,27,30);
+    });
+
 });
 
 describe("potencia should take two numbers as arguments and return the first number raised to the power of the second number", () => {
@@ -120,6 +132,14 @@ describe("potencia should take two numbers as arguments and return the first num
     test('given 5 and 0 as arguments, returns 1', () => {
         expect(functions.potencia(5,0)).toBe(1);
     });
+
+    test('given 5 and null as arguments, returns null', () => {
+        expect(functions.potencia(5,null)).toBeNull;
+    });
+
+    test('given 5 and undefined as arguments, returns undefined', () => {
+        expect(functions.potencia(5,undefined)).toBeUndefined;
+    });
 });
 
 describe("anidada should take two numbers as arguments and return the sum of its squares", () => {
@@ -128,24 +148,34 @@ describe("anidada should take two numbers as arguments and return the sum of its
         expect(functions.anidada(2,3)).toBe(13);
     });
 
+    test('given -2 and -3 as arguments, returns 13', () => {
+        expect(functions.anidada(-2,-3)).toBe(13);
+    });
+
     test('given null and null as arguments, returns null', () => {
         expect(functions.anidada(null,null)).toBeNull;
     });
+
+    test('given undefined and undefined as arguments, returns undefined', () => {
+        expect(functions.anidada(undefined,undefined)).toBeUndefined;
+    })
 });
 
 describe("cerosIzq should take two numbers as arguments and return a string made up of the first argument entered and to the left the number of zeros necessary for the length of the string to be the second argument", () => {
     
-    test("given 4 and 2 as arguments, returns 0004", () => {
+    test('given 4 and 4 as arguments, returns 0004', () => {
         expect(functions.cerosIzq(4,4)).toEqual('0004');
     });
 
-    test("given 4 and 0 as arguments, returns 4", () => {
+    test('given 4 and 0 as arguments, returns 4', () => {
         expect(functions.cerosIzq(4,0)).toEqual('4');
     });
 
-    test("given four and 6 as arguments, returns 00four", () => {
+    test('given four and 6 as arguments, returns 00four', () => {
         expect(functions.cerosIzq('four',6)).toEqual('00four');
     });
 
+    test('given four and null as arguments, return', () => {
+        expect(functions.cerosIzq(4,null)).toBe('4');
+    })
 });
-// npm run test-coverage
